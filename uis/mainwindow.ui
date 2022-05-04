@@ -114,22 +114,55 @@ color: rgb(255, 255, 255);</string>
              <item>
               <widget class="QStackedWidget" name="stackedWidget">
                <property name="currentIndex">
-                <number>5</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="categories">
-                <widget class="QLabel" name="label_2">
-                 <property name="geometry">
-                  <rect>
-                   <x>380</x>
-                   <y>250</y>
-                   <width>131</width>
-                   <height>41</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>categories</string>
-                 </property>
-                </widget>
+                <layout class="QGridLayout" name="gridLayout_8">
+                 <item row="0" column="0">
+                  <layout class="QVBoxLayout" name="verticalLayout_10" stretch="1,1,10">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_7">
+                     <item>
+                      <spacer name="horizontalSpacer_3">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="add_caegory_btn">
+                       <property name="styleSheet">
+                        <string notr="true">background-color: rgb(32, 74, 135);
+color: rgb(255, 255, 255);
+font: 75 15pt &quot;Ubuntu Mono&quot;;
+padding:10px;</string>
+                       </property>
+                       <property name="text">
+                        <string>ADD CATEGORY</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <widget class="Line" name="line_3">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_9"/>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
                </widget>
                <widget class="QWidget" name="stock">
                 <widget class="QLabel" name="label_3">
@@ -162,19 +195,60 @@ color: rgb(255, 255, 255);</string>
                 </widget>
                </widget>
                <widget class="QWidget" name="items">
-                <widget class="QLabel" name="label_5">
-                 <property name="geometry">
-                  <rect>
-                   <x>340</x>
-                   <y>390</y>
-                   <width>67</width>
-                   <height>17</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>Items</string>
-                 </property>
-                </widget>
+                <layout class="QGridLayout" name="gridLayout_7">
+                 <item row="0" column="0">
+                  <layout class="QVBoxLayout" name="verticalLayout_7" stretch="1,1,10">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_6">
+                     <item>
+                      <spacer name="horizontalSpacer_2">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pushButton_2">
+                       <property name="styleSheet">
+                        <string notr="true">background-color: rgb(32, 74, 135);
+color: rgb(255, 255, 255);
+font: 75 15pt &quot;Ubuntu Mono&quot;;
+padding:10px;</string>
+                       </property>
+                       <property name="text">
+                        <string>NEW ITEM</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <widget class="Line" name="line_2">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <layout class="QVBoxLayout" name="verticalLayout_9">
+                     <item>
+                      <layout class="QGridLayout" name="gridLayout_6">
+                       <item row="0" column="0">
+                        <widget class="QTableWidget" name="items_table"/>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
                </widget>
                <widget class="QWidget" name="home">
                 <widget class="QLabel" name="label">
@@ -233,15 +307,9 @@ padding:10px;</string>
                     </widget>
                    </item>
                    <item>
-                    <layout class="QVBoxLayout" name="verticalLayout_7">
-                     <item>
-                      <widget class="QTreeWidget" name="treeWidget">
-                       <column>
-                        <property name="text">
-                         <string notr="true">1</string>
-                        </property>
-                       </column>
-                      </widget>
+                    <layout class="QGridLayout" name="gridLayout_5">
+                     <item row="0" column="0">
+                      <widget class="QTableWidget" name="sales_table"/>
                      </item>
                     </layout>
                    </item>
