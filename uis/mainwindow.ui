@@ -37,7 +37,7 @@
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="pushButton_3">
+              <widget class="QPushButton" name="sales_btn">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(136, 138, 133);
 color: rgb(255, 255, 255);</string>
@@ -48,7 +48,7 @@ color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_2">
+              <widget class="QPushButton" name="items_btn">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(136, 138, 133);
 color: rgb(255, 255, 255);</string>
@@ -59,7 +59,7 @@ color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_4">
+              <widget class="QPushButton" name="categories_btn">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(136, 138, 133);
 color: rgb(255, 255, 255);</string>
@@ -70,7 +70,7 @@ color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_5">
+              <widget class="QPushButton" name="stock_btn">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(136, 138, 133);
 color: rgb(255, 255, 255);</string>
@@ -81,7 +81,7 @@ color: rgb(255, 255, 255);</string>
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="reports_btn">
                <property name="styleSheet">
                 <string notr="true">background-color: rgb(136, 138, 133);
 color: rgb(255, 255, 255);</string>
@@ -114,10 +114,141 @@ color: rgb(255, 255, 255);</string>
              <item>
               <widget class="QStackedWidget" name="stackedWidget">
                <property name="currentIndex">
-                <number>1</number>
+                <number>5</number>
                </property>
-               <widget class="QWidget" name="page"/>
-               <widget class="QWidget" name="page_2"/>
+               <widget class="QWidget" name="categories">
+                <widget class="QLabel" name="label_2">
+                 <property name="geometry">
+                  <rect>
+                   <x>380</x>
+                   <y>250</y>
+                   <width>131</width>
+                   <height>41</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>categories</string>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="stock">
+                <widget class="QLabel" name="label_3">
+                 <property name="geometry">
+                  <rect>
+                   <x>350</x>
+                   <y>230</y>
+                   <width>101</width>
+                   <height>21</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>Stock</string>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="reports">
+                <widget class="QLabel" name="label_4">
+                 <property name="geometry">
+                  <rect>
+                   <x>370</x>
+                   <y>390</y>
+                   <width>67</width>
+                   <height>17</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>Reports</string>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="items">
+                <widget class="QLabel" name="label_5">
+                 <property name="geometry">
+                  <rect>
+                   <x>340</x>
+                   <y>390</y>
+                   <width>67</width>
+                   <height>17</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>Items</string>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="home">
+                <widget class="QLabel" name="label">
+                 <property name="geometry">
+                  <rect>
+                   <x>350</x>
+                   <y>240</y>
+                   <width>101</width>
+                   <height>51</height>
+                  </rect>
+                 </property>
+                 <property name="text">
+                  <string>HOME PAGE</string>
+                 </property>
+                </widget>
+               </widget>
+               <widget class="QWidget" name="sales">
+                <layout class="QGridLayout" name="gridLayout_4">
+                 <item row="0" column="0">
+                  <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,1,5">
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_5">
+                     <item>
+                      <spacer name="horizontalSpacer">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="pushButton">
+                       <property name="styleSheet">
+                        <string notr="true">background-color: rgb(32, 74, 135);
+color: rgb(255, 255, 255);
+font: 75 15pt &quot;Ubuntu Mono&quot;;
+padding:10px;</string>
+                       </property>
+                       <property name="text">
+                        <string>NEW SALE</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <widget class="Line" name="line">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <layout class="QVBoxLayout" name="verticalLayout_7">
+                     <item>
+                      <widget class="QTreeWidget" name="treeWidget">
+                       <column>
+                        <property name="text">
+                         <string notr="true">1</string>
+                        </property>
+                       </column>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
             </layout>
