@@ -125,6 +125,8 @@ if __name__ == "__main__":
 
     # make_appointment
     # print("COACHES================", Coach.getCoaches())
+    print(Coach.cancel_appointment("wew", "7-10", "Morris"))
+
     Coach.makeAppointment("Morris", "7-10", 1, "gitonga")
     Coach.makeAppointment("Morris", "7-10", 1, "gg")
     Coach.makeAppointment("Morris", "7-10", 2, "wew")

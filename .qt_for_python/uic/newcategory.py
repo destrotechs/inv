@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/destro/projects/python/INVENTORY/uis/newcategory.ui'
+# Form implementation generated from reading ui file '/home/destro/projects/python/INVENTORY/newcategory.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #

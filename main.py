@@ -11,7 +11,9 @@ from PyQt5.QtWidgets import (
     QTableView,
     QTableWidget,
     QHeaderView,
+    QDialog,
 )
+from PyQt5.uic import loadUi
 from db.base import *
 from uis.UI_MainWindow import Ui_MainWindow
 from uis.UI_NewCategory import Ui_Form
@@ -127,8 +129,8 @@ class AppLaunch:
         self.ui.stackedWidget.setCurrentWidget(self.ui.reports)
 
     def showaddcategory(self):
-        self.form = Ui_Form()
-        self.form.show()
+        ui = NewCategory()
+        ui.exec()
 
 
 def createConnection():
@@ -143,6 +145,14 @@ def createConnection():
         return False
     print("Connected....")
     return True
+
+
+class NewCategory(QDialog):
+    def __init__(self):
+        import os
+
+        super(NewCategory, self).__init__()
+        loadUi(os.getcwd() + "/uis/newcategory.ui", self)
 
 
 if __name__ == "__main__":
