@@ -31,27 +31,28 @@ class Coach:
                 if appointment["coach"] == coac:
                     coach_found = True
                     coach_appointments.append(appointment)
-        for appointment in coach_appointments:
-            tot = tot + int(appointment["duration"])
-            if appointment["time"] == tim and appointment["appointee"] == appointee:
-                print("Canceled Previous appointment ....")
-                cls.cancel_appointment(appointee, tim, coac)
-            else:
-                time_allocated = time_allocated + int(appointment["duration"])
+        if coach_found:
+            for appointment in coach_appointments:
+                tot = tot + int(appointment["duration"])
+                if appointment["time"] == tim and appointment["appointee"] == appointee:
+                    print("Canceled Previous appointment ....")
+                    cls.cancel_appointment(appointee, tim, coac)
+                else:
+                    time_allocated = time_allocated + int(appointment["duration"])
 
-        for appointment in coach_appointments:
-            slot = tim.split("-")
-            if (
-                appointment["time"] == tim
-                and duration <= (int(slot[1]) - int(slot[0])) - tot
-            ):
-                cls.add_new_appointment(
-                    coac, tim, duration, appointee, (time_allocated + int(duration))
-                )
-            else:
-                error = True
+            for appointment in coach_appointments:
+                slot = tim.split("-")
+                if (
+                    appointment["time"] == tim
+                    and duration <= (int(slot[1]) - int(slot[0])) - tot
+                ):
+                    cls.add_new_appointment(
+                        coac, tim, duration, appointee, (time_allocated + int(duration))
+                    )
+                else:
+                    error = True
 
-        if not coach_found:
+        else:
             cls.add_new_appointment(coac, tim, duration, appointee, duration)
         if error:
             print("the requested time slot is not available")
