@@ -28,6 +28,7 @@ class Coach:
         coach_appointments = []
         time_allocated = 0
         tot = 0
+        can_add = False
         if len(cls.coach_appontments) > 0:
             for appointment in cls.coach_appontments:
                 if appointment["coach"] == coac:
@@ -35,9 +36,13 @@ class Coach:
                     coach_appointments.append(appointment)
         for appointment in coach_appointments:
             tot = tot + int(appointment["duration"])
+            if appointment["time"] == tim and appointment["appointee"] == appointee:
+                print("Canceled Previous appointment ....")
+                cls.cancel_appointment(appointee, tim, coac)
+            else:
+                time_allocated = time_allocated + int(appointment["duration"])
 
         for appointment in coach_appointments:
-            time_allocated = time_allocated + int(appointment["duration"])
             slot = tim.split("-")
             if (
                 appointment["time"] == tim
@@ -123,13 +128,14 @@ if __name__ == "__main__":
     # make_appointment
     # print("COACHES================", Coach.getCoaches())
     Coach.makeAppointment("Morris", "7-10", 1, "gitonga")
-    Coach.makeAppointment("Morris", "7-10", 3, "gg")
+    Coach.makeAppointment("Morris", "7-10", 1, "gg")
     Coach.makeAppointment("Morris", "7-10", 1, "wew")
 
     # Coach.makeAppointment("Morris", "7-10", 1, "munyua")
     # Coach.makeAppointment("Morris", "7-10", 1, "gg")
 
-    # Coach.makeAppointment("Mbae", "6-10", 2, "prof")
+    Coach.makeAppointment("Mbae", "6-10", 2, "prof")
+    Coach.makeAppointment("Mbae", "6-10", 2, "prof")
 
     # Coach.cancel_appointment("munyua", "7-10", "Morris")
     Coach.cancel_appointment("wew", "7-10", "Morris")
