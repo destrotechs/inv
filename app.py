@@ -142,3 +142,6 @@ if __name__ == "__main__":
     # Coach.makeAppointment("Morris", "7-10", 1, "GG")
 
     print("ALl APPOINTMENTS=====================", Coach.get_allAppointments())
+    print(
+        "COACH APPOINTMENTS=====================", Coach.get_coachappointment("Morris")
+    )
