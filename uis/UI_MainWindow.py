@@ -75,6 +75,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayout_7.addItem(spacerItem1)
+        self.search_category_field = QtWidgets.QPlainTextEdit(self.categories)
+        self.search_category_field.setStyleSheet("font: 15pt \"Ubuntu Mono\";\n"
+"margin:10px;\n"
+"height:8px;\n"
+"text-align:center;\n"
+"padding:5px;")
+        self.search_category_field.setObjectName("search_category_field")
+        self.horizontalLayout_7.addWidget(self.search_category_field)
         self.add_caegory_btn = QtWidgets.QPushButton(self.categories)
         self.add_caegory_btn.setStyleSheet("background-color: rgb(32, 74, 135);\n"
 "color: rgb(255, 255, 255);\n"
@@ -88,9 +96,9 @@ class Ui_MainWindow(object):
         self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_3.setObjectName("line_3")
         self.verticalLayout_10.addWidget(self.line_3)
-        self.horizontalLayout_9 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.verticalLayout_10.addLayout(self.horizontalLayout_9)
+        self.categories_layout = QtWidgets.QHBoxLayout()
+        self.categories_layout.setObjectName("categories_layout")
+        self.verticalLayout_10.addLayout(self.categories_layout)
         self.verticalLayout_10.setStretch(0, 1)
         self.verticalLayout_10.setStretch(1, 1)
         self.verticalLayout_10.setStretch(2, 10)
@@ -131,17 +139,9 @@ class Ui_MainWindow(object):
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
         self.verticalLayout_7.addWidget(self.line_2)
-        self.verticalLayout_9 = QtWidgets.QVBoxLayout()
-        self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.gridLayout_6 = QtWidgets.QGridLayout()
-        self.gridLayout_6.setObjectName("gridLayout_6")
-        self.items_table = QtWidgets.QTableWidget(self.items)
-        self.items_table.setObjectName("items_table")
-        self.items_table.setColumnCount(0)
-        self.items_table.setRowCount(0)
-        self.gridLayout_6.addWidget(self.items_table, 0, 0, 1, 1)
-        self.verticalLayout_9.addLayout(self.gridLayout_6)
-        self.verticalLayout_7.addLayout(self.verticalLayout_9)
+        self.items_layout = QtWidgets.QVBoxLayout()
+        self.items_layout.setObjectName("items_layout")
+        self.verticalLayout_7.addLayout(self.items_layout)
         self.verticalLayout_7.setStretch(0, 1)
         self.verticalLayout_7.setStretch(1, 1)
         self.verticalLayout_7.setStretch(2, 10)
@@ -196,7 +196,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
