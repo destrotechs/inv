@@ -26,22 +26,33 @@ class Coach:
         coach_found = False
         error = False
         coach_appointments = []
+        time_allocated = 0
+        tot = 0
         if len(cls.coach_appontments) > 0:
             for appointment in cls.coach_appontments:
                 if appointment["coach"] == coac:
                     coach_found = True
                     coach_appointments.append(appointment)
         for appointment in coach_appointments:
-            if appointment["time"] == tim and duration <= appointment["available_time"]:
-                time_allocated = int(appointment["duration"]) + int(duration)
-                cls.add_new_appointment(coac, tim, duration, appointee, time_allocated)
+            tot = tot + int(appointment["duration"])
+
+        for appointment in coach_appointments:
+            time_allocated = time_allocated + int(appointment["duration"])
+            slot = tim.split("-")
+            if (
+                appointment["time"] == tim
+                and duration <= (int(slot[1]) - int(slot[0])) - tot
+            ):
+                cls.add_new_appointment(
+                    coac, tim, duration, appointee, (time_allocated + int(duration))
+                )
             else:
                 error = True
 
         if not coach_found:
             cls.add_new_appointment(coac, tim, duration, appointee, duration)
         if error:
-            return "the requested time slot is not available"
+            print("the requested time slot is not available")
 
     @classmethod
     def add_new_appointment(cls, coac, tim, duration, appointee, tot=0):
@@ -106,18 +117,23 @@ if __name__ == "__main__":
     coach = Coach("Morris", ["1", "2", "3"], ["7-10", "1-3", "6-10"])
     coach = Coach("Mbae", ["1", "2", "3"], ["7-9", "1-3", "6-10"])
 
-    print("COACHES================", Coach.getCoaches())
-    print("COACHE WORKING HOURS================", Coach.getCoachWorkingHours("Morris"))
+    # print("COACHES================", Coach.getCoaches())
+    # print("COACHE WORKING HOURS================", Coach.getCoachWorkingHours("Morris"))
 
     # make_appointment
-    print("COACHES================", Coach.getCoaches())
+    # print("COACHES================", Coach.getCoaches())
     Coach.makeAppointment("Morris", "7-10", 1, "gitonga")
-    Coach.makeAppointment("Morris", "7-10", 1, "munyua")
-    Coach.makeAppointment("Mbae", "6-10", 2, "prof")
+    Coach.makeAppointment("Morris", "7-10", 3, "gg")
+    Coach.makeAppointment("Morris", "7-10", 1, "wew")
+
+    # Coach.makeAppointment("Morris", "7-10", 1, "munyua")
+    # Coach.makeAppointment("Morris", "7-10", 1, "gg")
+
+    # Coach.makeAppointment("Mbae", "6-10", 2, "prof")
 
     # Coach.cancel_appointment("munyua", "7-10", "Morris")
-    # Coach.cancel_appointment("gitonga", "7-10", "Morris")
-    print(Coach.cancel_appointment("prof", "6-10", "Mbae"))
+    Coach.cancel_appointment("wew", "7-10", "Morris")
+    # print(Coach.cancel_appointment("prof", "6-10", "Mbae"))
 
     # Coach.makeAppointment("Morris", "7-10", 1, "GG")
 
