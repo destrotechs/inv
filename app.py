@@ -1,6 +1,3 @@
-from audioop import add
-
-
 class Coach:
     name = 0
     coaches = []
@@ -129,7 +126,7 @@ if __name__ == "__main__":
     # print("COACHES================", Coach.getCoaches())
     Coach.makeAppointment("Morris", "7-10", 1, "gitonga")
     Coach.makeAppointment("Morris", "7-10", 1, "gg")
-    Coach.makeAppointment("Morris", "7-10", 1, "wew")
+    Coach.makeAppointment("Morris", "7-10", 2, "wew")
 
     # Coach.makeAppointment("Morris", "7-10", 1, "munyua")
     # Coach.makeAppointment("Morris", "7-10", 1, "gg")
