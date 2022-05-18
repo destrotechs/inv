@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/destro/projects/python/INVENTORY/newcategory.ui'
+# Form implementation generated from reading ui file '/home/destro/projects/python/INVENTORY/uis/newcategory.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -11,54 +11,54 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(707, 450)
-        self.gridLayout = QtWidgets.QGridLayout(Form)
+class Ui_NewCategory(object):
+    def setupUi(self, NewCategory):
+        NewCategory.setObjectName("NewCategory")
+        NewCategory.resize(641, 317)
+        self.gridLayout = QtWidgets.QGridLayout(NewCategory)
         self.gridLayout.setObjectName("gridLayout")
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout()
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setStyleSheet("font: 75 20pt \"Ubuntu Mono\";")
+        self.label = QtWidgets.QLabel(NewCategory)
+        self.label.setStyleSheet("font: 75 18pt \"Umpush\";")
         self.label.setObjectName("label")
         self.verticalLayout_3.addWidget(self.label)
         self.verticalLayout.addLayout(self.verticalLayout_3)
         self.formLayout = QtWidgets.QFormLayout()
         self.formLayout.setObjectName("formLayout")
-        self.label_2 = QtWidgets.QLabel(Form)
-        self.label_2.setStyleSheet("font: 75 17pt \"Ubuntu Mono\";")
+        self.label_2 = QtWidgets.QLabel(NewCategory)
+        self.label_2.setStyleSheet("font: 75 17pt \"Umpush\";")
         self.label_2.setObjectName("label_2")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.label_2)
-        self.lineEdit = QtWidgets.QLineEdit(Form)
-        self.lineEdit.setStyleSheet("padding:8px;\n"
+        self.c_code = QtWidgets.QLineEdit(NewCategory)
+        self.c_code.setStyleSheet("padding:8px;\n"
 "font: 15pt \"Ubuntu Mono\";\n"
 "border-radius:5px;")
-        self.lineEdit.setObjectName("lineEdit")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lineEdit)
-        self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setStyleSheet("font: 75 17pt \"Ubuntu Mono\";")
+        self.c_code.setObjectName("c_code")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.c_code)
+        self.label_3 = QtWidgets.QLabel(NewCategory)
+        self.label_3.setStyleSheet("font: 75 17pt \"Umpush\";")
         self.label_3.setObjectName("label_3")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.label_3)
-        self.lineEdit_2 = QtWidgets.QLineEdit(Form)
-        self.lineEdit_2.setStyleSheet("padding:8px;\n"
+        self.c_name = QtWidgets.QLineEdit(NewCategory)
+        self.c_name.setStyleSheet("padding:8px;\n"
 "font: 15pt \"Ubuntu Mono\";\n"
 "border-radius:5px;")
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.lineEdit_2)
-        self.label_4 = QtWidgets.QLabel(Form)
-        self.label_4.setStyleSheet("font: 75 17pt \"Ubuntu Mono\";")
+        self.c_name.setObjectName("c_name")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.c_name)
+        self.label_4 = QtWidgets.QLabel(NewCategory)
+        self.label_4.setStyleSheet("font: 75 17pt \"Umpush\";")
         self.label_4.setObjectName("label_4")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.label_4)
-        self.lineEdit_3 = QtWidgets.QLineEdit(Form)
-        self.lineEdit_3.setStyleSheet("padding:8px;\n"
+        self.c_description = QtWidgets.QLineEdit(NewCategory)
+        self.c_description.setStyleSheet("padding:8px;\n"
 "font: 15pt \"Ubuntu Mono\";\n"
 "border-radius:5px;")
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.lineEdit_3)
-        self.line = QtWidgets.QFrame(Form)
+        self.c_description.setObjectName("c_description")
+        self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.c_description)
+        self.line = QtWidgets.QFrame(NewCategory)
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line.setObjectName("line")
@@ -66,35 +66,35 @@ class Ui_Form(object):
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setContentsMargins(-1, 30, -1, -1)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.pushButton_2 = QtWidgets.QPushButton(Form)
-        self.pushButton_2.setStyleSheet("font: 15pt \"Ubuntu Mono\";\n"
+        self.cancel_form_btn = QtWidgets.QPushButton(NewCategory)
+        self.cancel_form_btn.setStyleSheet("font: 15pt \"Ubuntu Mono\";\n"
 "padding:10px;\n"
 "background-color: rgb(204, 0, 0);\n"
 "color: rgb(255, 255, 255);")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalLayout_3.addWidget(self.pushButton_2)
-        self.pushButton = QtWidgets.QPushButton(Form)
-        self.pushButton.setStyleSheet("background-color: rgb(78, 154, 6);\n"
+        self.cancel_form_btn.setObjectName("cancel_form_btn")
+        self.horizontalLayout_3.addWidget(self.cancel_form_btn)
+        self.save_category_btn = QtWidgets.QPushButton(NewCategory)
+        self.save_category_btn.setStyleSheet("background-color: rgb(78, 154, 6);\n"
 "font: 15pt \"Ubuntu Mono\";\n"
 "padding:10px;\n"
 "color: rgb(255, 255, 255);")
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_3.addWidget(self.pushButton)
+        self.save_category_btn.setObjectName("save_category_btn")
+        self.horizontalLayout_3.addWidget(self.save_category_btn)
         self.formLayout.setLayout(3, QtWidgets.QFormLayout.FieldRole, self.horizontalLayout_3)
         self.verticalLayout.addLayout(self.formLayout)
         self.verticalLayout.setStretch(0, 1)
         self.verticalLayout.setStretch(1, 5)
         self.gridLayout.addLayout(self.verticalLayout, 0, 0, 1, 1)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(NewCategory)
+        QtCore.QMetaObject.connectSlotsByName(NewCategory)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, NewCategory):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Form"))
-        self.label.setText(_translate("Form", "Add Category"))
-        self.label_2.setText(_translate("Form", "Category Code"))
-        self.label_3.setText(_translate("Form", "Name"))
-        self.label_4.setText(_translate("Form", "Description"))
-        self.pushButton_2.setText(_translate("Form", "CANCEL"))
-        self.pushButton.setText(_translate("Form", "SAVE"))
+        NewCategory.setWindowTitle(_translate("NewCategory", "New Category"))
+        self.label.setText(_translate("NewCategory", "Add Category"))
+        self.label_2.setText(_translate("NewCategory", "Category Code"))
+        self.label_3.setText(_translate("NewCategory", "Name"))
+        self.label_4.setText(_translate("NewCategory", "Description"))
+        self.cancel_form_btn.setText(_translate("NewCategory", "CANCEL"))
+        self.save_category_btn.setText(_translate("NewCategory", "SAVE"))

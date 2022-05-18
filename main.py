@@ -1,4 +1,6 @@
+from importlib.resources import path
 from os import system
+from unicodedata import category
 from PyQt5.QtCore import Qt
 import sys
 from PyQt5.QtSql import QSqlDatabase, QSqlQuery, QSqlTableModel
@@ -17,6 +19,10 @@ from PyQt5.uic import loadUi
 from db.base import *
 from uis.UI_MainWindow import Ui_MainWindow
 from uis.UI_NewCategory import Ui_Form
+import os
+
+global project_path
+project_path = os.getcwd()
 
 
 class AppLaunch:
@@ -41,6 +47,12 @@ class AppLaunch:
 
         # add buttons
         self.ui.add_caegory_btn.clicked.connect(self.showaddcategory)
+
+        # searches
+        print(
+            "KEY RELEASE======",
+            self.ui.search_category_field.keyReleaseEvent(self, event),
+        )
 
     def showUi(self):
         self.main_window.show()
@@ -132,6 +144,12 @@ class AppLaunch:
         ui = NewCategory()
         ui.exec()
 
+    def search_categories(self):
+        db = Base()
+        db.db_connect()
+        records = db.search_items("item_categories", "PH")
+        print("RECORDS========", records)
+
 
 def createConnection():
     conn = Base()
@@ -149,10 +167,36 @@ def createConnection():
 
 class NewCategory(QDialog):
     def __init__(self):
-        import os
-
         super(NewCategory, self).__init__()
-        loadUi(os.getcwd() + "/uis/newcategory.ui", self)
+        loadUi(project_path + "/uis/newcategory.ui", self)
+        self.save_category_btn.clicked.connect(self.save_category)
+        self.cancel_form_btn.clicked.connect(self.clear_form)
+
+    def save_category(self):
+        category_code = self.c_code.text()
+        category_name = self.c_name.text()
+        category_description = self.c_description.text()
+
+        db = Base()
+        db.db_connect()
+        saved = db.save_record(
+            category_code, category_name, category_description, table="item_categories"
+        )
+
+        if saved:
+            QMessageBox.information(
+                None,
+                "Success",
+                "Item Category created successfully!",
+            )
+            self.clear_form()
+        else:
+            print("Failed to add category")
+
+    def clear_form(self):
+        self.c_code.setText("")
+        self.c_name.setText("")
+        self.c_description.setText("")
 
 
 if __name__ == "__main__":
